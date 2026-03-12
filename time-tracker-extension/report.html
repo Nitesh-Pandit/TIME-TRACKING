@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Tracker - Weekly Report</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="report-page">
+    <!-- MAIN POINT: Weekly productivity report page showing summary and recommendations -->
+    <div class="report-container">
+      <div class="report-header">
+        <h1>📋 Weekly Productivity Report</h1>
+        <p class="report-date" id="reportDate">Week of March 10, 2026</p>
+      </div>
+
+      <!-- MAIN POINT: Executive summary showing overall weekly performance -->
+      <div class="report-section executive-summary">
+        <h2>Executive Summary</h2>
+        <div class="summary-cards">
+          <div class="summary-card">
+            <h4>Weekly Productivity Score</h4>
+            <div class="score-large" id="weeklyScore">0%</div>
+            <p id="scoreComment">No data yet</p>
+          </div>
+          <div class="summary-card">
+            <h4>Total Hours Tracked</h4>
+            <p class="value" id="totalHours">0h</p>
+          </div>
+          <div class="summary-card">
+            <h4>Most Productive Day</h4>
+            <p class="value" id="bestDay">-</p>
+          </div>
+          <div class="summary-card">
+            <h4>Websites Tracked</h4>
+            <p class="value" id="totalWebsites">0</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN POINT: Day-by-day breakdown showing productivity for each day -->
+      <div class="report-section daily-breakdown">
+        <h2>Daily Breakdown</h2>
+        <div class="daily-chart" id="dailyBreakdown">
+          <!-- Generated dynamically -->
+        </div>
+      </div>
+
+      <!-- MAIN POINT: Top websites table showing most visited sites this week -->
+      <div class="report-section top-websites">
+        <h2>Top Websites This Week</h2>
+        <table class="report-table" id="topWebsitesTable">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Website</th>
+              <th>Time Spent</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody id="topWebsitesBody">
+            <tr>
+              <td colspan="4" class="no-data">No data available</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- MAIN POINT: Detailed statistics including productive vs unproductive ratio -->
+      <div class="report-section detailed-stats">
+        <h2>Detailed Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-item productive">
+            <h4>Productive Time</h4>
+            <p class="stat-number" id="prodTimeReport">0h</p>
+            <p class="stat-percentage" id="prodPercentReport">0%</p>
+          </div>
+          <div class="stat-item unproductive">
+            <h4>Unproductive Time</h4>
+            <p class="stat-number" id="unprodTimeReport">0h</p>
+            <p class="stat-percentage" id="unprodPercentReport">0%</p>
+          </div>
+          <div class="stat-item neutral">
+            <h4>Neutral Time</h4>
+            <p class="stat-number" id="neutralTimeReport">0h</p>
+            <p class="stat-percentage" id="neutralPercentReport">0%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN POINT: Recommendations for improving productivity -->
+      <div class="report-section recommendations">
+        <h2>💡 Recommendations</h2>
+        <ul id="recommendationsList">
+          <li>
+            Start tracking your activities to get personalized recommendations
+          </li>
+        </ul>
+      </div>
+
+      <!-- MAIN POINT: Action buttons to print report or return to dashboard -->
+      <div class="report-actions">
+        <button id="printBtn" class="btn btn-primary">🖨️ Print Report</button>
+        <button id="emailBtn" class="btn btn-secondary">📧 Email Report</button>
+        <button id="backBtn" class="btn btn-tertiary">← Back</button>
+      </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="report.js"></script>
+  </body>
+</html>

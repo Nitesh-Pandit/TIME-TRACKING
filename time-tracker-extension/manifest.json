@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Time Tracker & Productivity Analytics",
+  "version": "1.0",
+  "description": "Track time spent on websites and analyze your productivity",
+
+  // MAIN POINT: Define permissions needed to track active tabs and store data
+  "permissions": ["tabs", "activeTab", "scripting", "storage"],
+
+  // MAIN POINT: Host permissions to track time on all websites
+  "host_permissions": ["https://*/*", "http://*/*"],
+
+  // MAIN POINT: Background service worker that continuously monitors browsing activity
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  // MAIN POINT: Define the popup UI that appears when user clicks the extension icon
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Time Tracker"
+  },
+
+  // MAIN POINT: Register content scripts to inject functionality into web pages
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

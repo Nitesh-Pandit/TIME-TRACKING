@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Tracker - Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dashboard-page">
+    <!-- MAIN POINT: Full analytics dashboard with detailed breakdown of all tracked websites -->
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1>📊 Analytics Dashboard</h1>
+        <p>Detailed breakdown of your browsing activities</p>
+      </div>
+
+      <!-- MAIN POINT: Top section showing overall stats for selected period -->
+      <div class="dashboard-stats">
+        <div class="stat-box">
+          <h4>Total Time Tracked</h4>
+          <p class="stat-value" id="totalTime">0h 0m</p>
+        </div>
+        <div class="stat-box">
+          <h4>Websites Visited</h4>
+          <p class="stat-value" id="websitesCount">0</p>
+        </div>
+        <div class="stat-box">
+          <h4>Productivity Score</h4>
+          <p class="stat-value" id="overallScore">0%</p>
+        </div>
+        <div class="stat-box">
+          <h4>Average Daily Rating</h4>
+          <p class="stat-value" id="avgRating">0/10</p>
+        </div>
+      </div>
+
+      <!-- MAIN POINT: Time period selector to view data for different date ranges -->
+      <div class="period-selector">
+        <button class="period-btn active" data-period="today">Today</button>
+        <button class="period-btn" data-period="week">This Week</button>
+        <button class="period-btn" data-period="month">This Month</button>
+        <button class="period-btn" data-period="all">All Time</button>
+      </div>
+
+      <!-- MAIN POINT: Main content area split into two sections -->
+      <div class="dashboard-content">
+        <!-- MAIN POINT: Left section showing website breakdown in a table -->
+        <div class="dashboard-section">
+          <h2>📱 Website Activity</h2>
+          <div class="websites-table-container">
+            <table class="websites-table" id="websitesTable">
+              <thead>
+                <tr>
+                  <th>Website</th>
+                  <th>Time Spent</th>
+                  <th>Visits</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody id="websitesTableBody">
+                <tr>
+                  <td colspan="4" class="no-data">No data available</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- MAIN POINT: Right section showing productivity breakdown chart -->
+        <div class="dashboard-section">
+          <h2>📈 Productivity Breakdown</h2>
+          <div class="chart-container">
+            <!-- MAIN POINT: Pie chart showing distribution of productive/unproductive/neutral time -->
+            <canvas id="productivityChart" width="200" height="200"></canvas>
+            <div class="chart-legend">
+              <div class="legend-item productive">
+                <span class="legend-color"></span>
+                <span class="legend-label">Productive</span>
+                <span class="legend-value" id="prodPercent">0%</span>
+              </div>
+              <div class="legend-item unproductive">
+                <span class="legend-color"></span>
+                <span class="legend-label">Unproductive</span>
+                <span class="legend-value" id="unprodPercent">0%</span>
+              </div>
+              <div class="legend-item neutral">
+                <span class="legend-color"></span>
+                <span class="legend-label">Neutral</span>
+                <span class="legend-value" id="neutralPercent">0%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN POINT: Daily activity chart showing browsing activity over time -->
+      <div class="dashboard-section full-width">
+        <h2>📅 Daily Activity</h2>
+        <div class="daily-chart-container">
+          <canvas id="dailyActivityChart" width="800" height="200"></canvas>
+        </div>
+      </div>
+
+      <!-- MAIN POINT: Action buttons to export data or return to popup -->
+      <div class="dashboard-actions">
+        <button id="exportBtn" class="btn btn-primary">📥 Export Data</button>
+        <button id="backBtn" class="btn btn-secondary">← Back to Popup</button>
+      </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
